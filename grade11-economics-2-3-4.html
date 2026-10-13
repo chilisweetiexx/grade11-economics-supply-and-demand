@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>經濟學 2-3 ~ 2-4 供給與供給彈性｜核心筆記與高頻考點</title>
+  <!-- 引入 MathJax 引擎，徹底解決數學運算符號與公式錯亂問題 -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-light: #e0f2fe;
+      --success: #16a34a;
+      --success-light: #f0fdf4;
+      --warning: #d97706;
+      --warning-light: #fffbeb;
+      --danger: #dc2626;
+      --danger-light: #fef2f2;
+      --text-main: #1e293b;
+      --text-muted: #475569;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.65;
+      color: var(--text-main);
+      background-color: var(--bg);
+      padding: 24px 16px;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0369a1, #0284c7);
+      color: white;
+      padding: 30px 24px;
+      border-radius: 16px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.18);
+    }
+
+    header h1 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    header p {
+      opacity: 0.92;
+      font-size: 0.95rem;
+    }
+
+    .section-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      color: #0369a1;
+      border-bottom: 2px solid var(--primary-light);
+      padding-bottom: 8px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    h3 {
+      font-size: 1.02rem;
+      color: var(--text-main);
+      margin: 16px 0 8px 0;
+    }
+
+    .formula-box {
+      background-color: #f0f9ff;
+      border-left: 4px solid var(--primary);
+      padding: 14px 16px;
+      margin: 12px 0;
+      border-radius: 0 8px 8px 0;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f1f5f9;
+      font-weight: 600;
+      color: #334155;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+    .badge-blue { background: var(--primary-light); color: var(--primary); }
+    .badge-green { background: var(--success-light); color: var(--success); }
+    .badge-amber { background: var(--warning-light); color: var(--warning); }
+    .badge-red { background: var(--danger-light); color: var(--danger); }
+
+    ul, ol {
+      padding-left: 22px;
+      margin: 8px 0;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    @media (min-width: 640px) {
+      .grid-2 {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .sub-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px;
+    }
+
+    .sub-card h4 {
+      font-size: 0.95rem;
+      color: #0369a1;
+      margin-bottom: 6px;
+    }
+
+    .qa-box {
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 14px;
+      background-color: #ffffff;
+    }
+
+    .qa-title {
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .qa-answer {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-top: 1px dashed var(--border);
+      padding-top: 8px;
+      margin-top: 6px;
+    }
+
+    .highlight {
+      font-weight: 600;
+      color: #b91c1c;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>供給與供給價格彈性 (2-3 ~ 2-4) 核心重點筆記</h1>
+      <p>涵蓋供給法則例外、供給變動 vs 供給量變動、幾何截距判斷法與高頻題型分析</p>
+    </header>
+
+    <!-- 模組一：供給的核心概念 -->
+    <section class="section-card">
+      <h2>1. 供給的基本意涵與法則</h2>
+      
+      <h3>(1) 供給與供給法則 (Law of Supply)</h3>
+      <ul>
+        <li><strong>定義</strong>：在特定時間與特定價格下，生產者「有能力」且「願意」提供的財貨或勞務數量。</li>
+        <li><strong>供給法則</strong>：在其他條件不變下，商品本身價格 ($P$) 與供給量 ($Q_s$) 呈<strong>同方向變動</strong>（$P \uparrow \Rightarrow Q_s \uparrow$；$P \downarrow \Rightarrow Q_s \downarrow$）。</li>
+        <li><strong>供給曲線形狀</strong>：通常為一條<strong>正斜率</strong>（由左下方向右上方延伸）的曲線。</li>
+        <li><strong>曲線的幾何涵義</strong>：
+          <ul>
+            <li>在特定價格下，廠商所願意提供的<strong>最高產量</strong>。</li>
+            <li>在特定產量下，廠商所願意接受的<strong>最低價格</strong>（即生產者的保留價格、邊際成本線）。</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>(2) 供給法則的例外</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>例外型態</th>
+            <th>供給曲線特性</th>
+            <th>生活實例說明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>固定存量財（不可再生財）</strong></td>
+            <td>垂直線（斜率為 $\infty$，彈性 $E_s = 0$）</td>
+            <td>古董、名畫真跡（如莫內《睡蓮》）、土地面積、不可再生的文化遺產。</td>
+          </tr>
+          <tr>
+            <td><strong>後彎的勞動供給線</strong></td>
+            <td>工資極高時呈現「負斜率」</td>
+            <td>工資率高到一定程度後，所得效果大於替代效果，工人寧可追求休閒而減少工作時數。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>(3) 供給的分類</h3>
+      <ul>
+        <li><strong>獨立供給</strong>：一財貨的生產與其他財貨完全無關。</li>
+        <li><strong>聯合供給（聯產品）</strong>：同一生產過程中同時產出兩種商品（例如：牛肉與牛皮、烏魚肉與烏魚子）。</li>
+        <li><strong>競爭供給（供給上的替代財）</strong>：同一套生產要素只能二選一生產（例如：同一塊土地種玉米或大豆）。</li>
+      </ul>
+    </section>
+
+    <!-- 模組二：供給量變動 vs 供給變動 -->
+    <section class="section-card">
+      <h2>2. 「供給量變動」與「供給變動」的嚴格區分（大考必考）</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>比較項目</th>
+            <th>供給量的變動 (Change in Quantity Supplied)</th>
+            <th>供給的變動 (Change in Supply)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>發生主因</strong></td>
+            <td><span class="highlight">該財貨「本身價格」變動</span></td>
+            <td>本身價格以外的「其他因素」變動</td>
+          </tr>
+          <tr>
+            <td><strong>圖形呈現</strong></td>
+            <td><strong>在同一個供給曲線上「點的移動」</strong></td>
+            <td><strong>整條供給曲線平移</strong>（右移或左移）</td>
+          </tr>
+          <tr>
+            <td><strong>方向含義</strong></td>
+            <td>價格上升 $\Rightarrow$ 沿著曲線往右上移（量增）<br>價格下跌 $\Rightarrow$ 沿著曲線往左下移（量減）</td>
+            <td><strong>右移</strong>：供給增加（成本降、技術進步）<br><strong>左移</strong>：供給減少（水災旱災、原料上漲）</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>造成整條供給曲線移動（供給變動）的 5 大因素：</h3>
+      <div class="grid-2">
+        <div class="sub-card">
+          <h4>促使供給增加（曲線右移）</h4>
+          <ul>
+            <li><strong>生產技術進步</strong>（自動化、AI 化）</li>
+            <li><strong>生產要素成本降低</strong>（原料、工資下跌）</li>
+            <li><strong>政府給予生產補貼</strong>（或減免關稅）</li>
+            <li><strong>生產者家數增加</strong></li>
+            <li><strong>預期未來價格下跌</strong>（現階段趕緊拋售）</li>
+          </ul>
+        </div>
+        <div class="sub-card">
+          <h4>促使供給減少（曲線左移）</h4>
+          <ul>
+            <li><strong>天災、氣候惡劣</strong>（水災、乾旱休耕）</li>
+            <li><strong>原物料價格暴漲</strong>（麵粉、晶片短缺）</li>
+            <li><strong>政府提高稅率</strong>（營業稅、環保碳稅）</li>
+            <li><strong>生產者家數減少</strong></li>
+            <li><strong>預期未來價格上漲</strong>（現階段惜售囤積）</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 模組三：供給價格彈性與幾何判斷 -->
+    <section class="section-card">
+      <h2>3. 供給價格彈性 ($E_s$) 公式與「截距速算法」</h2>
+      
+      <h3>(1) 供給彈性計算公式</h3>
+      <div class="formula-box">
+        $$E_s = \frac{\%\Delta Q_s}{\%\Delta P} = \frac{\frac{\Delta Q}{Q}}{\frac{\Delta P}{P}} = \frac{\Delta Q}{\Delta P} \times \frac{P}{Q}$$
+      </div>
+
+      <h3>(2) 直線型供給曲線——截距秒殺口訣</h3>
+      <p>將正斜率的直線型供給線反向延長，觀察其與座標軸之交點截距：</p>
+      <table>
+        <thead>
+          <tr>
+            <th>反向延長線交點位置</th>
+            <th>截距特徵</th>
+            <th>供給彈性數值</th>
+            <th>分類</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>交於縱軸（P 軸正向）</strong></td>
+            <td>橫軸截距為負</td>
+            <td><span class="badge badge-amber">$E_s > 1$</span></td>
+            <td>富於彈性</td>
+          </tr>
+          <tr>
+            <td><strong>通過原點 $(0, 0)$</strong></td>
+            <td>不論斜率多陡或多平緩</td>
+            <td><span class="badge badge-blue">$E_s = 1$</span></td>
+            <td>單一彈性（在該線上任何一點皆為 1）</td>
+          </tr>
+          <tr>
+            <td><strong>交於橫軸（Q 軸正向）</strong></td>
+            <td>縱軸截距為負</td>
+            <td><span class="badge badge-green">$0 < E_s < 1$</span></td>
+            <td>缺乏彈性</td>
+          </tr>
+          <tr>
+            <td><strong>垂直於橫軸（垂直線）</strong></td>
+            <td>$\Delta Q = 0$</td>
+            <td><span class="badge badge-red">$E_s = 0$</span></td>
+            <td>完全無彈性（如名畫、古董）</td>
+          </tr>
+          <tr>
+            <td><strong>水平於橫軸（水平線）</strong></td>
+            <td>$\Delta P = 0$</td>
+            <td><span class="badge badge-red">$E_s = \infty$</span></td>
+            <td>完全有彈性</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>(3) 影響供給價格彈性的核心要素</h3>
+      <ul>
+        <li><strong>生產期間長短</strong>：長期供給彈性 > 短期供給彈性（長期有充裕時間擴建廠房並變動生產規模）。</li>
+        <li><strong>生產要素之用途廣度</strong>：用途愈多、調度轉產愈容易，彈性愈大。</li>
+        <li><strong>增產引起邊際成本增加速度</strong>：增產時成本上升急遽者，彈性小；增產成本平緩者，彈性大。</li>
+        <li><strong>自然力影響與儲存容易度</strong>：受天候制約大、易腐敗難儲藏（如生鮮蔬果），彈性小；耐儲藏之工業製品，彈性大。</li>
+      </ul>
+    </section>
+
+    <!-- 模組四：市場供給加總與代數計算 -->
+    <section class="section-card">
+      <h2>4. 市場供給函數的「水平加總」法</h2>
+      <p>市場供給量是所有個別生產者供給量的總和，幾何上稱為<strong>水平加總</strong>（在給定相同價格 $P$ 下，將數量 $Q$ 相加）：</p>
+      <div class="formula-box">
+        若市場上有 $n$ 位相同供給函數 $q_i = -a + bP$ 的廠商：<br>
+        $$Q_s = \sum_{i=1}^{n} q_i = n \times (-a + bP) = -na + nbP$$
+      </div>
+      <p><strong>注意：</strong>若個別函數形式為反供給函數（以 $P$ 為主詞），必須先將其改寫成「$q = \dots$」之後，方能進行數量水平相加！</p>
+    </section>
+
+    <!-- 模組五：常見高頻考點解析 -->
+    <section class="section-card">
+      <h2>5. 常見考題陷阱與秒解示範</h2>
+
+      <div class="qa-box">
+        <div class="qa-title">
+          <span class="badge badge-blue">常考題 1</span> 「供給量變動」還是「供給變動」？
+        </div>
+        <p><strong>考題特徵：</strong>題目列出四個選項，詢問何者屬於「供給量變動」？</p>
+        <div class="qa-answer">
+          <strong>破解心法：</strong>
+          <ul>
+            <li>只要選項的因果是<strong>「該商品本身價格上漲或下跌」</strong>，就百分之百是「供給量變動」。</li>
+            <li>其餘如：原物料價格、天災、政府補貼、進口關稅變動，皆屬於「供給變動（曲線平移）」。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="qa-box">
+        <div class="qa-title">
+          <span class="badge badge-amber">常考題 2</span> 供給線上通過原點的彈性大小？
+        </div>
+        <p><strong>考題特徵：</strong>給予一條通過原點的正直線供給曲線，斜率可能非常陡峭，問線上各點的彈性是否不同？</p>
+        <div class="qa-answer">
+          <strong>破解心法：</strong>
+          <ul>
+            <li>任何<strong>通過原點之正斜率射線</strong>，其方程式必為 $Q = cP$（截距為 0）。</li>
+            <li>帶入彈性公式：$$E_s = \frac{dQ}{dP} \times \frac{P}{Q} = c \times \frac{P}{cP} = 1$$</li>
+            <li>無論角度多陡或多平緩，<strong>線上每一點的彈性必定恆等於 1</strong>！</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="qa-box">
+        <div class="qa-title">
+          <span class="badge badge-green">常考題 3</span> 個別供給函數求市場供給總量
+        </div>
+        <p><strong>考題特徵：</strong>市場上有甲、乙兩人生產者，個別函數為 $q = -20 + P$，求市場價格 $P = 24$ 時的總供給量？</p>
+        <div class="qa-answer">
+          <strong>破解心法：</strong>
+          <ol>
+            <li>水平加總：$$Q_s = q_甲 + q_乙 = (-20 + P) + (-20 + P) = -40 + 2P$$</li>
+            <li>代入 $P = 24$：$$Q_s = -40 + 2(24) = -40 + 48 = 8$$</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

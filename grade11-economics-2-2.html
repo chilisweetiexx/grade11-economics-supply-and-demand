@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>經濟學 2-2 需求價格彈性｜核心筆記與常考題型攻略</title>
+  <!-- 載入 MathJax 用於精確渲染 LaTeX 數學公式 -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-light: #eff6ff;
+      --success: #16a34a;
+      --success-light: #f0fdf4;
+      --warning: #d97706;
+      --warning-light: #fffbeb;
+      --danger: #dc2626;
+      --danger-light: #fef2f2;
+      --text-main: #1f2937;
+      --text-muted: #4b5563;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.6;
+      color: var(--text-main);
+      background-color: var(--bg);
+      padding: 24px 16px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      color: white;
+      padding: 32px 24px;
+      border-radius: 16px;
+      margin-bottom: 28px;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+    }
+
+    header h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      opacity: 0.9;
+      font-size: 0.95rem;
+    }
+
+    .section-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      color: #1e3a8a;
+      border-bottom: 2px solid var(--primary-light);
+      padding-bottom: 8px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      color: var(--text-main);
+      margin: 16px 0 8px 0;
+    }
+
+    .formula-box {
+      background-color: #f1f5f9;
+      border-left: 4px solid var(--primary);
+      padding: 14px 16px;
+      margin: 12px 0;
+      border-radius: 0 8px 8px 0;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f8fafc;
+      font-weight: 600;
+      color: #334155;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+    .badge-blue { background: var(--primary-light); color: var(--primary); }
+    .badge-green { background: var(--success-light); color: var(--success); }
+    .badge-amber { background: var(--warning-light); color: var(--warning); }
+    .badge-red { background: var(--danger-light); color: var(--danger); }
+
+    ul, ol {
+      padding-left: 20px;
+      margin: 8px 0;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 12px;
+    }
+
+    @media (min-width: 640px) {
+      grid-2 {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .sub-card {
+      background: #fafafa;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px;
+    }
+
+    .sub-card h4 {
+      font-size: 0.95rem;
+      color: #1e40af;
+      margin-bottom: 6px;
+    }
+
+    .qa-box {
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 14px;
+      background-color: #ffffff;
+    }
+
+    .qa-title {
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .qa-answer {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-top: 1px dashed var(--border);
+      padding-top: 8px;
+      margin-top: 6px;
+    }
+
+    .highlight {
+      font-weight: 600;
+      color: #b91c1c;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>需求價格彈性 (2-2) 重點精要與常考題型</h1>
+      <p>涵蓋定義公式、幾何判斷、總收益關係與考卷高頻題型秒殺心法</p>
+    </header>
+
+    <!-- 核心概念筆記 -->
+    <section class="section-card">
+      <h2>1. 核心觀念精華整理</h2>
+      
+      <h3>(1) 需求價格彈性 ($E_d$) 定義與計算</h3>
+      <p>衡量「價格變動百分比」引起「需求量變動百分比」的敏感程度，通常取絕對值：</p>
+      <div class="formula-box">
+        $$E_d = \left| \frac{\%\Delta Q}{\%\Delta P} \right| = \left| \frac{\frac{\Delta Q}{Q}}{\frac{\Delta P}{P}} \right| = \left| \frac{\Delta Q}{\Delta P} \times \frac{P}{Q} \right|$$
+      </div>
+      <ul>
+        <li><strong>點彈性 (以原數值為基期)</strong>：適用於已知單一點或微小變動：<br>
+          $$E_d = \left| \frac{Q_2 - Q_1}{P_2 - P_1} \times \frac{P_1}{Q_1} \right|$$
+        </li>
+        <li><strong>弧彈性 (中點法)</strong>：適用於已知兩點求區間彈性：<br>
+          $$E_d = \left| \frac{\frac{Q_2 - Q_1}{(Q_1 + Q_2) / 2}}{\frac{P_2 - P_1}{(P_1 + P_2) / 2}} \right| = \left| \frac{Q_2 - Q_1}{Q_1 + Q_2} \div \frac{P_2 - P_1}{P_1 + P_2} \right|$$
+        </li>
+      </ul>
+
+      <h3>(2) 需求彈性五大分類</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>彈性數值</th>
+            <th>分類名稱</th>
+            <th>需求線幾何形狀</th>
+            <th>日常生活代表情境</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>$E_d = \infty$</td>
+            <td><span class="badge badge-red">完全有彈性</span></td>
+            <td>水平線</td>
+            <td>稍微漲價就完全不買，稍微降價全買</td>
+          </tr>
+          <tr>
+            <td>$E_d > 1$</td>
+            <td><span class="badge badge-amber">富於彈性</span></td>
+            <td>相對平緩之負斜率</td>
+            <td>奢侈品、耐久財、替代品多的商品（如高階吹風機）</td>
+          </tr>
+          <tr>
+            <td>$E_d = 1$</td>
+            <td><span class="badge badge-blue">單一彈性</span></td>
+            <td>直角雙曲線 ($P \times Q = K$)</td>
+            <td><strong>固定支出型</strong>（例如每月固定花 1,000 元買紅酒）</td>
+          </tr>
+          <tr>
+            <td>$0 < E_d < 1$</td>
+            <td><span class="badge badge-amber">缺乏彈性</span></td>
+            <td>相對陡峭之負斜率</td>
+            <td>生活必需品、農產品、民生衛生紙</td>
+          </tr>
+          <tr>
+            <td>$E_d = 0$</td>
+            <td><span class="badge badge-green">完全無彈性</span></td>
+            <td>垂直線</td>
+            <td><strong>固定數量型</strong>（例如每天固定喝 2 杯奶茶、救命急診藥）</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>(3) 幾何圖形兩大重要特性</h3>
+      <div class="grid-2">
+        <div class="sub-card">
+          <h4>同一條負斜率直線上</h4>
+          <p>整條線斜率固定，但<strong>每一點的彈性皆不相同</strong>：</p>
+          <ul>
+            <li>縱軸截距點：$E_d = \infty$</li>
+            <li>中點上方區間：$E_d > 1$（愈往上彈性愈大）</li>
+            <li>線段正中點：$E_d = 1$</li>
+            <li>中點下方區間：$E_d < 1$（愈往下彈性愈小）</li>
+            <li>橫軸截距點：$E_d = 0$</li>
+          </ul>
+        </div>
+        <div class="sub-card">
+          <h4>兩條線相交於同一點時</h4>
+          <p>在同一個價格與數量交點下：</p>
+          <ul>
+            <li><strong>線愈平緩</strong>（斜率絕對值小）：<span class="highlight">彈性愈大</span>。</li>
+            <li><strong>線愈陡峭</strong>（斜率絕對值大）：<span class="highlight">彈性愈小</span>。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 總收益矩陣 -->
+    <section class="section-card">
+      <h2>2. 彈性與總收益 ($TR = P \times Q$) 的定價策略</h2>
+      <p>廠商調價時，總收益（或消費者總支出）的增減方向取決於需求彈性：</p>
+      <table>
+        <thead>
+          <tr>
+            <th>彈性狀態</th>
+            <th>價格調漲 ($P \uparrow$)</th>
+            <th>價格調降 ($P \downarrow$)</th>
+            <th>最佳營收策略與經典實例</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>$E_d > 1$ (富於彈性)</strong><br><small>$\% \Delta Q > \% \Delta P$</small></td>
+            <td>$TR$ 減少</td>
+            <td><span class="highlight">$TR$ 增加</span></td>
+            <td><strong>薄利多銷</strong>（降價使銷量大幅提升，總營收上升）</td>
+          </tr>
+          <tr>
+            <td><strong>$E_d = 1$ (單一彈性)</strong><br><small>$\% \Delta Q = \% \Delta P$</small></td>
+            <td>$TR$ 不變</td>
+            <td>$TR$ 不變</td>
+            <td>任何調價皆不影響總支出，營收恆定為常數</td>
+          </tr>
+          <tr>
+            <td><strong>$E_d < 1$ (缺乏彈性)</strong><br><small>$\% \Delta Q < \% \Delta P$</small></td>
+            <td><span class="highlight">$TR$ 增加</span></td>
+            <td>$TR$ 減少</td>
+            <td><strong>提高售價</strong>增收；<strong>穀賤傷農</strong>（豐收價跌使農民總收減少）</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 影響需求彈性之因素 -->
+    <section class="section-card">
+      <h2>3. 影響需求價格彈性的五大因素</h2>
+      <ul>
+        <li><strong>替代品多寡</strong>：替代品愈多、愈相近，需求彈性愈大（如可樂 vs 胰島素）。</li>
+        <li><strong>支出佔所得比例</strong>：佔所得比重愈高，彈性愈大（買房屋比買牙籤有彈性）。</li>
+        <li><strong>商品性質</strong>：奢侈品彈性大，生活必需品彈性小。</li>
+        <li><strong>時間長短</strong>：考慮時間愈長，消費者調整行為的時間愈充分，彈性愈大。</li>
+        <li><strong>定義範圍寬窄</strong>：範圍定義愈狹窄，彈性愈大（如「特定品牌汽水」大於「整體飲料類」）。</li>
+      </ul>
+    </section>
+
+    <!-- 常考題型與解題心法 -->
+    <section class="section-card">
+      <h2>4. 考卷常考 4 大題型與秒殺解題法</h2>
+
+      <div class="qa-box">
+        <div class="qa-title">
+          <span class="badge badge-blue">題型一</span> 語意敘述判斷題（固定量 vs 固定錢）
+        </div>
+        <p><strong>題目特徵：</strong>「小明每次加油固定加 30 公升」vs「小華每次加油固定加 500 元」</p>
+        <div class="qa-answer">
+          <strong>秒殺技巧：</strong>
+          <ul>
+            <li>固定數量（如 30 公升、2 瓶）&rarr; $Q$ 固定變動率為 0 &rarr; <strong>$E_d = 0$（垂直線）</strong>。</li>
+            <li>固定支出（如 500 元、1,000 元）&rarr; $P \times Q = K$ &rarr; <strong>$E_d = 1$（直角雙曲線）</strong>。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="qa-box">
+        <div class="qa-title">
+          <span class="badge badge-amber">題型二</span> 定價策略與穀賤傷農
+        </div>
+        <p><strong>題目特徵：</strong>給予商品彈性（如橄欖油 $E=0.2$），問調漲價格對營業額的影響；或農產品大豐收問農民收益。</p>
+        <div class="qa-answer">
+          <strong>秒殺技巧：</strong>
+          <ul>
+            <li>先看彈性：$E = 0.2 < 1$（缺乏彈性），代表數量反應遲鈍。</li>
+            <li>定價判斷：調漲價格時 $TR$ 增加；豐收導致價格下跌時 $TR$ 反而減少（穀賤傷農）。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="qa-box">
+        <div class="qa-title">
+          <span class="badge badge-green">題型三</span> 負斜率需求線上的位置比較
+        </div>
+        <p><strong>題目特徵：</strong>給予單一直線需求線上的 A、B 兩點，或問「價格愈高，彈性為何？」「相交於一點時何者彈性大？」</p>
+        <div class="qa-answer">
+          <strong>秒殺技巧：</strong>
+          <ul>
+            <li>同一線上：<strong>位置愈高（$P$ 愈高），彈性愈大</strong>；靠近橫軸 $Q$ 的下半段屬於 $E_d < 1$。</li>
+            <li>同交點上：<strong>平躺彈性大、直立彈性小</strong>（平緩線彈性 > 陡峭線彈性）。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="qa-box">
+        <div class="qa-title">
+          <span class="badge badge-red">題型四</span> 點彈性代數計算題
+        </div>
+        <p><strong>題目特徵：</strong>給方程式 $Q_d = 60 - 2P$，求 $P = 20$ 時的需求彈性。</p>
+        <div class="qa-answer">
+          <strong>秒殺技巧：</strong>
+          <ol>
+            <li>代入 $P = 20$，算出 $Q = 60 - 2(20) = 20$。</li>
+            <li>找出斜率係數絕對值 $\left| \frac{dQ}{dP} \right| = 2$。</li>
+            <li>帶入公式：$$E_d = \left| \frac{dQ}{dP} \right| \times \frac{P}{Q} = 2 \times \frac{20}{20} = 2$$</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

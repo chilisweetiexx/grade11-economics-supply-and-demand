@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>經濟學 2-5～2-6 市場均衡・供需變動・政府管制｜重點整理＆常考題型攻略</title>
+  <!-- 載入 MathJax 引擎，確保數學符號、下標與方程式精確渲染不亂碼 -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    :root {
+      --primary: #0f766e;
+      --primary-light: #ccfbf1;
+      --secondary: #0369a1;
+      --secondary-light: #e0f2fe;
+      --warning: #d97706;
+      --warning-light: #fef3c7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --text-main: #1e293b;
+      --text-muted: #475569;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.65;
+      color: var(--text-main);
+      background-color: var(--bg);
+      padding: 24px 16px;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, #115e59, #0f766e);
+      color: white;
+      padding: 28px 24px;
+      border-radius: 16px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 14px rgba(15, 118, 110, 0.2);
+    }
+
+    header h1 {
+      font-size: 1.65rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    header p {
+      opacity: 0.9;
+      font-size: 0.95rem;
+    }
+
+    .section-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      color: #0f766e;
+      border-bottom: 2px solid var(--primary-light);
+      padding-bottom: 8px;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      color: var(--text-main);
+      margin: 16px 0 8px 0;
+    }
+
+    .formula-box {
+      background-color: #f0fdfa;
+      border-left: 4px solid var(--primary);
+      padding: 14px 16px;
+      margin: 12px 0;
+      border-radius: 0 8px 8px 0;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f1f5f9;
+      font-weight: 600;
+      color: #334155;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+    .badge-teal { background: var(--primary-light); color: var(--primary); }
+    .badge-blue { background: var(--secondary-light); color: var(--secondary); }
+    .badge-amber { background: var(--warning-light); color: var(--warning); }
+    .badge-red { background: var(--danger-light); color: var(--danger); }
+
+    ul, ol {
+      padding-left: 22px;
+      margin: 8px 0;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    @media (min-width: 640px) {
+      .grid-2 {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .sub-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px;
+    }
+
+    .sub-card h4 {
+      font-size: 0.95rem;
+      color: #0f766e;
+      margin-bottom: 6px;
+    }
+
+    .qa-box {
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 14px;
+      background-color: #ffffff;
+    }
+
+    .qa-title {
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .qa-answer {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-top: 1px dashed var(--border);
+      padding-top: 8px;
+      margin-top: 6px;
+    }
+
+    .highlight {
+      font-weight: 600;
+      color: #b91c1c;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>經濟學 2-5～2-6 市場均衡・供需雙重變動・政府管制 重點筆記</h1>
+      <p>價格機能（看不見的手）、供需變動與均衡點推移、價格上限 vs 價格下限精華歸納</p>
+    </header>
+
+    <!-- 第 1 部：市場均衡與價格機能 -->
+    <section class="section-card">
+      <h2>1. 市場均衡與價格機能（看不見的手）</h2>
+      
+      <h3>(1) 均衡條件</h3>
+      <p>在自由競爭市場中，當消費者願意購買的需求量與生產者願意供給的數量相等時，即達成市場均衡，決定均衡價格（$P^*$）與均衡交易量（$Q^*$）[cite: 5, 6]：</p>
+      <div class="formula-box">
+        $$Q_d = Q_s \implies P = P^*, \quad Q = Q^*$$
+      </div>
+
+      <h3>(2) 市場失衡與自律調整機制</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>市場狀態</th>
+            <th>供需數量關係</th>
+            <th>市況特徵</th>
+            <th>價格自律調整方向</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>超額供給（供過於求）</strong></td>
+            <td>$Q_s > Q_d$（此時市價高於均衡價：$P > P^*$）[cite: 5, 6]</td>
+            <td>商品滯銷、存貨積壓賣不出去[cite: 5]</td>
+            <td>廠商為出清存貨降價競爭 $\implies$ <span class="highlight">價格下跌（$P \downarrow$）</span>[cite: 5]</td>
+          </tr>
+          <tr>
+            <td><strong>超額需求（供不應求 / 短缺）</strong></td>
+            <td>$Q_d > Q_s$（此時市價低於均衡價：$P < P^*$）[cite: 5, 6]</td>
+            <td>買方搶購、排隊排不到、商品短缺[cite: 5, 6]</td>
+            <td>消費者加價搶購 $\implies$ <span class="highlight">價格上漲（$P \uparrow$）</span>[cite: 5]</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>這種透過買賣雙方自發競爭使市況自動回歸均衡點的力量，稱為<strong>價格機能（Price Mechanism）</strong>或<strong>市場機能</strong>[cite: 5]。</p>
+    </section>
+
+    <!-- 第 2 部：供需曲線變動對均衡的影響 -->
+    <section class="section-card">
+      <h2>2. 供需變動對市場均衡（$P^*$ 與 $Q^*$）的影響法則</h2>
+
+      <h3>(1) 單一力量變動的 4 大基本法則</h3>
+      <ul>
+        <li><strong>需求增加（$D$ 右移）</strong>：市價上漲、交易量增加（$P^* \uparrow$，$Q^* \uparrow$）[cite: 6]</li>
+        <li><strong>需求減少（$D$ 左移）</strong>：市價下跌、交易量減少（$P^* \downarrow$，$Q^* \downarrow$）[cite: 5, 6]</li>
+        <li><strong>供給增加（$S$ 右移）</strong>：市價下跌、交易量增加（$P^* \downarrow$，$Q^* \uparrow$）[cite: 5, 6]</li>
+        <li><strong>供給減少（$S$ 左移）</strong>：市價上漲、交易量減少（$P^* \uparrow$，$Q^* \downarrow$）[cite: 6]</li>
+      </ul>
+
+      <h3>(2) 供需雙重變動矩陣（大考必考重點）</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>同時變動型態</th>
+            <th>均衡價格（$P^*$）走向</th>
+            <th>均衡交易量（$Q^*$）走向</th>
+            <th>口訣與判斷心法</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>$D$ 增加 且 $S$ 增加</strong></td>
+            <td>不一定（視移動幅度而定）[cite: 6]</td>
+            <td><span class="highlight">必定增加（$Q^* \uparrow$）</span>[cite: 6]</td>
+            <td>雙方都想擴大交易，數量必定增加[cite: 6]；價格一推一拉故不一定[cite: 6]。</td>
+          </tr>
+          <tr>
+            <td><strong>$D$ 減少 且 $S$ 減少</strong></td>
+            <td>不一定（視移動幅度而定）</td>
+            <td><span class="highlight">必定減少（$Q^* \downarrow$）</span></td>
+            <td>雙方都收縮產能與消費，數量必定減少；價格一跌一張故不一定。</td>
+          </tr>
+          <tr>
+            <td><strong>$D$ 增加 且 $S$ 減少</strong></td>
+            <td><span class="highlight">必定上漲（$P^* \uparrow$）</span>[cite: 6]</td>
+            <td>不一定（視移動幅度而定）[cite: 6]</td>
+            <td>買方想多買、賣方產量少，價格必定暴漲[cite: 6]；數量互相抵銷故不一定[cite: 6]。</td>
+          </tr>
+          <tr>
+            <td><strong>$D$ 減少 且 $S$ 增加</strong></td>
+            <td><span class="highlight">必定下跌（$P^* \downarrow$）</span>[cite: 5]</td>
+            <td>不一定（視移動幅度而定）[cite: 5]</td>
+            <td>買方不買、賣方又大量上市，價格必定崩盤[cite: 5]；數量走向視幅度而定[cite: 5]。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="sub-card">
+        <h4>考題給定變動幅度時的秒殺技巧</h4>
+        <p>「<strong>幅度大的決定數量，方向相同的決定價格</strong>」[cite: 5]：</p>
+        <ul>
+          <li><strong>範例</strong>：若供給增加幅度大於需求減少幅度[cite: 5]：
+            <br>價格：$S$ 增使價格跌、$D$ 減也使價格跌 $\implies$ <strong>$P^*$ 必定下跌</strong>[cite: 5]。
+            <br>數量：$S$ 增加（$Q \uparrow$）幅度較大，壓過 $D$ 減少（$Q \downarrow$）的幅度 $\implies$ <strong>$Q^*$ 必定增加</strong>[cite: 5]。
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 第 3 部：政府價格管制政策 -->
+    <section class="section-card">
+      <h2>3. 政府價格管制政策（價格上限 vs 價格下限）</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>比較項目</th>
+            <th>價格上限（最高管制價格 / Price Ceiling）</th>
+            <th>價格下限（最低管制價格 / Price Floor）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>主要保護對象</strong></td>
+            <td><strong>消費者</strong>（避免物價暴漲買不起民生物資）[cite: 6]</td>
+            <td><strong>生產者 / 勞工</strong>（避免賤價傷農或薪資遭剝削）[cite: 5, 6]</td>
+          </tr>
+          <tr>
+            <td><strong>有效管制的法規位置</strong></td>
+            <td>必須設定在市場均衡價格之<strong>「下」</strong>（$P_c < P^*$）[cite: 6]</td>
+            <td>必須設定在市場均衡價格之<strong>「上」</strong>（$P_f > P^*$）[cite: 5, 6]</td>
+          </tr>
+          <tr>
+            <td><strong>市場產生的失衡現象</strong></td>
+            <td><strong>超額需求（供不應求 / 缺貨）</strong>[cite: 5, 6]<br>依短邊原則，實際市場交易量縮小[cite: 5]</td>
+            <td><strong>超額供給（供過於求 / 滯銷）</strong>[cite: 5, 6]<br>在勞動市場上則表現為失業現象</td>
+          </tr>
+          <tr>
+            <td><strong>衍生問題與配套措施</strong></td>
+            <td>搶購排隊、黑市交易（黑市暴利）、<strong>定額配給</strong>[cite: 5, 6]</td>
+            <td>產品過剩積壓，需由<strong>政府保證收購</strong>或休耕補貼[cite: 3, 5]</td>
+          </tr>
+          <tr>
+            <td><strong>大考常見代表實例</strong></td>
+            <td>房租管制、水電油價凍漲、防疫口罩限價、奶粉凍漲[cite: 6]</td>
+            <td><strong>最低工資（基本工資時薪制）</strong>、農產品保證收購價格[cite: 5, 6]</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 第 4 部：考卷常見經典題型解析 -->
+    <section class="section-card">
+      <h2>4. 考卷常見 3 大經典題型與解題步驟</h2>
+
+      <div class="qa-box">
+        <div class="qa-title">
+          <span class="badge badge-teal">題型一</span> 聯立方程式求市場均衡
+        </div>
+        <p><strong>題目範例：</strong>$Q_d = 300 - 5P$，$Q_s = -80 + 5P$，求均衡價格 $P^*$ 與數量 $Q^*$[cite: 6]？</p>
+        <div class="qa-answer">
+          <strong>解題步驟：</strong>
+          <ol>
+            <li>令 $Q_d = Q_s$：$$300 - 5P = -80 + 5P \implies 10P = 380 \implies P^* = 38$$[cite: 6]</li>
+            <li>代回任一式求數量：$$Q^* = 300 - 5(38) = 300 - 190 = 110$$[cite: 6]</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="qa-box">
+        <div class="qa-title">
+          <span class="badge badge-amber">題型二</span> 價格管制效果判斷
+        </div>
+        <p><strong>題目範例：</strong>承上題，若政府規定售價不得超過 $P = 30$，會產生何種現象[cite: 6]？</p>
+        <div class="qa-answer">
+          <strong>解題步驟：</strong>
+          <ol>
+            <li>判定管制型態：規定價格 $30$ 低於均衡價格 $38$，屬於具約束力的「價格上限」[cite: 6]。</li>
+            <li>代入需求：$Q_d = 300 - 5(30) = 150$[cite: 6]</li>
+            <li>代入供給：$Q_s = -80 + 5(30) = 70$[cite: 6]</li>
+            <li>$Q_d (150) > Q_s (70)$，市場出現差額為 $80$ 的<strong>超額需求（供不應求）</strong>[cite: 6]。</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="qa-box">
+        <div class="qa-title">
+          <span class="badge badge-blue">題型三</span> 相關財貨價格變動對均衡點之衝擊
+        </div>
+        <p><strong>題目範例：</strong>$A$ 財貨在需求上的替代品價格下跌，則 $A$ 財貨的均衡點如何變動[cite: 5]？</p>
+        <div class="qa-answer">
+          <strong>解題步驟：</strong>
+          <ul>
+            <li>替代品價格下跌 $\implies$ 消費者改去買便宜的替代品，導致對 $A$ 的<strong>需求減少（$D$ 線左移）</strong>[cite: 5]。</li>
+            <li>在供給線不變下，$D$ 左移導致均衡點沿著供給線往左下方滑動 $\implies$ <span class="highlight">$P^*$ 下跌、$Q^*$ 減少</span>[cite: 5]。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
